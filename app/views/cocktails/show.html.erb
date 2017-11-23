@@ -1,12 +1,10 @@
 <div class="container">
   <div class="row">
-    <div class="text-center">
-      <h2><strong>Cocktail:</strong> <%= @cocktail.name %></h2>
-        <p><% @cocktail.doses.each do |dose| %>
-        <p><%= dose.ingredient.name %>
-        <%= dose.description %></p>
-          <% end %>
-        </p>
+    <div class="card-show">
+      <h2><strong><%= @cocktail.name %></strong></h2>
+        <h4>Ingredients List: <% @cocktail.doses.each do |dose| %></h4>
+          <p><%= dose.ingredient.name %> : <%= dose.description %></p>
+        <% end %>
     </div>
 
     <div class="text-center">

@@ -4,12 +4,14 @@
     <h2>New Cocktail</h2>
     <h4>Please, enter your cocktail</h4>
   </div>
+
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
       <%= simple_form_for [@cocktail] do |f| %>
         <%= f.input :name %>
-
+        <div class="text-center">
         <%= f.submit "Add a Cocktail", class: "btn btn-primary" %>
+        </div>
       <% end %>
       <br>
 
