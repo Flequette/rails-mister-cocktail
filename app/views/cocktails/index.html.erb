@@ -1,33 +1,31 @@
+<%= render "components/banner" %>
 
-<div class="home">
-  <%= render "components/banner" %>
+<div class="container">
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+    <div class="col-xs-12 col-sm-3 col-md-3">
 
-  <div class="container">
-    <div class="row">
-      <% @cocktails.each do |cocktail| %>
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <div class="card">
-            <%= link_to cocktail_path(cocktail) do %>
-              <h3><%= cocktail.name %></h3>
-            <% end %>
-            <p><% cocktail.doses.each do |dose| %></p>
-              <p><%= dose.ingredient.name %></p>
-            <% end %>
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+         url(<%= cl_image_path cocktail.photo, height: 300, width: 400, crop: :fill %>)">
 
-            <div class="card-detail">
-              <%= link_to cocktail_path(cocktail) do %>
-                <i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i>
-              <% end %>
-            </div>
-          </div>
+        <div class="card-category">
+          <h3><%= cocktail.name %></h3>
         </div>
-      <% end %>
+
+        <div class="card-link">
+          <%= link_to cocktail_path(cocktail) do %>
+            <i class="fa fa-plus-circle fa-stack-2px fa-2x" aria-hidden="true" style="#230004"></i>
+          <% end %>
+        </div>
+
+      </div>
     </div>
+    <% end %>
   </div>
-
- <%= render "components/footer" %>
-
 </div>
+
+<%= render "components/footer" %>
+
 
 
 

@@ -1,11 +1,14 @@
 <div class="navbar-wagon">
 
-  <a href="/" class="navbar-wagon-brand">
-    <img src="images/logo.png" alt="logo">
-  </a>
+  <div class="back_homepage">
+    <%=link_to cocktails_path(@cocktail), class: "navbar-wagon-brand" do %>
+    <%= cl_image_tag("logo_ledxsz.jpg") %>
+  <% end %>
+  </div>
 
   <div class="navbar-wagon-right hidden-xs hidden-sm">
-    <%= link_to "Add a Cocktail", new_cocktail_path(@cocktail), class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "Add a Cocktail", new_cocktail_path(@cocktail), class: "navbar-wagon-item navbar-wagon-link", class: "btn btn-primary"%>
   </div>
 
 </div>
+

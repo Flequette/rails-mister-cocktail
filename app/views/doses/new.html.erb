@@ -11,12 +11,12 @@
         <%= f.input :ingredient_id, collection: Ingredient.all %>
         <%= f.input :description %>
         <div class="text-center">
-        <%= f.submit "Add a dose", class: "btn btn-primary" %>
+        <%= f.submit "Add a dose", class: "btn btn-primary"%>
         </div>
       <% end %>
       <br>
       <div class="text-center">
-        <%= link_to "Back", cocktails_path(@cocktail) %>
+        <%= link_to "Back", cocktails_path(@cocktail), {:style=>'color:#230004;'} %>
       </div>
     </div>
   </div>
